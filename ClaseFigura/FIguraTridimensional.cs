@@ -10,34 +10,49 @@ namespace ClaseFigura
 {
     public class FIguraTridimensional : Figura
     {
+        //Métodos para calcular el área de las figuras tridimensionales.
         public void CalcularAreaEsfera(double radio)
         {
-            if (radio <= 0)
-            {
-                
-            }
-
             area = 4 * Math.PI * Math.Pow(radio, 2);
         }
 
         public void CalcularAreaCubo(double lado)
         {
-            if (lado <= 0)
-            {
-                
-            }
-
             area = 6 * Math.Pow(lado, 2);
         }
 
         public void CalcularAreaTetraedro(double longitudLado)
         {
-            if (longitudLado <= 0)
+            area = Math.Sqrt(3) * Math.Pow(longitudLado, 2);
+        }
+
+        //Métodos para calcular el volumen de las figuras tridimensionales.
+        public void CalcularVolumenEsfera(double radio)
+        {
+            if (radio <= 0)
             {
-                
+                throw new ArgumentException("El radio debe ser un valor positivo.");
             }
 
-            area = Math.Sqrt(3) * Math.Pow(longitudLado, 2);
+            volumen = (4.0 / 3.0) * Math.PI * Math.Pow(radio, 3);
+        }
+        public void CalcularVolumenCubo(double lado)
+        {
+            if (lado <= 0)
+            {
+                throw new ArgumentException("El lado debe ser un valor positivo.");
+            }
+
+            volumen = Math.Pow(lado, 3);
+        }
+        public void CalcularVolumenTetraedro(double lado)
+        {
+            if (lado <= 0)
+            {
+                throw new ArgumentException("El lado debe ser un valor positivo.");
+            }
+
+            volumen = (Math.Pow(lado, 3)) / (6 * Math.Sqrt(2));
         }
     }
 }
