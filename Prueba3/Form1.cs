@@ -35,7 +35,7 @@ namespace Prueba3
         private void btncalc_Click(object sender, EventArgs e)
         {
             
-            FiguraBidimensional obj = new FiguraBidimensional();
+            FiguraBidimensional obj = new FiguraBidimensional();   
             int indice = cboBidi.SelectedIndex;
            
             switch (indice) 
@@ -87,18 +87,24 @@ namespace Prueba3
                 txtradio.Enabled = true;
                 txtaltura.Enabled = false;
                 txtbase.Enabled = false;
+                Reset();
+                lblarea.Text= "00.0";
             }
             else if (indice == 1)
             {
                 txtradio.Enabled = false;
                 txtaltura.Enabled = true;
                 txtbase.Enabled = true;
+                Reset();
+                lblarea.Text= "00.0";
             }
             else
             {
                 txtradio.Enabled = false;
                 txtaltura.Enabled = true;
                 txtbase.Enabled = true;
+                Reset();
+                lblarea.Text = "00.0";
             }
         }
 
@@ -140,16 +146,22 @@ namespace Prueba3
             {
                 txtradioTri.Enabled = true;
                 txtlado.Enabled = false;
+                Reset2();
+                lblareatri.Text = "00.0";
             }
             else if (indice == 1)
             {
                 txtradioTri.Enabled = false;
                 txtlado.Enabled = true;
+                Reset2();
+                lblareatri.Text = "00.0";
             }
             else
             {
                 txtradioTri.Enabled = false;
                 txtlado.Enabled = true;
+                Reset2();
+                lblareatri.Text = "00.0";
             }
         }
 
