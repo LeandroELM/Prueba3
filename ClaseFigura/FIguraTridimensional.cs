@@ -31,7 +31,7 @@ namespace ClaseFigura
         {
             if (radio <= 0)
             {
-                throw new ArgumentException("El radio debe ser un valor positivo.");
+                //validar
             }
 
             volumen = (4.0 / 3.0) * Math.PI * Math.Pow(radio, 3);
@@ -40,7 +40,7 @@ namespace ClaseFigura
         {
             if (lado <= 0)
             {
-                throw new ArgumentException("El lado debe ser un valor positivo.");
+                //validar
             }
 
             volumen = Math.Pow(lado, 3);
@@ -49,7 +49,7 @@ namespace ClaseFigura
         {
             if (lado <= 0)
             {
-                throw new ArgumentException("El lado debe ser un valor positivo.");
+                //validar
             }
 
             volumen = (Math.Pow(lado, 3)) / (6 * Math.Sqrt(2));

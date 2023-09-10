@@ -69,7 +69,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtlado3 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnvolum = new System.Windows.Forms.Button();
             this.lblvolum = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtladovol = new System.Windows.Forms.TextBox();
@@ -104,7 +104,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 31);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Calculadora de Areas";
+            this.label3.Text = "Calculadora de Àreas";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // groupBox1
@@ -505,7 +505,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.DarkTurquoise;
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnvolum);
             this.groupBox4.Controls.Add(this.lblvolum);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.txtladovol);
@@ -522,14 +522,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Figuras Tridimensionales(volumen)";
             // 
-            // button1
+            // btnvolum
             // 
-            this.button1.Location = new System.Drawing.Point(9, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Calcular";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnvolum.Location = new System.Drawing.Point(9, 121);
+            this.btnvolum.Name = "btnvolum";
+            this.btnvolum.Size = new System.Drawing.Size(75, 23);
+            this.btnvolum.TabIndex = 15;
+            this.btnvolum.Text = "Calcular";
+            this.btnvolum.UseVisualStyleBackColor = true;
+            this.btnvolum.Click += new System.EventHandler(this.btnvolum_Click);
             // 
             // lblvolum
             // 
@@ -555,6 +556,7 @@
             this.txtladovol.Name = "txtladovol";
             this.txtladovol.Size = new System.Drawing.Size(27, 20);
             this.txtladovol.TabIndex = 11;
+            this.txtladovol.TextChanged += new System.EventHandler(this.txtladovol_TextChanged);
             // 
             // label22
             // 
@@ -571,6 +573,7 @@
             this.txtradiovol.Name = "txtradiovol";
             this.txtradiovol.Size = new System.Drawing.Size(27, 20);
             this.txtradiovol.TabIndex = 9;
+            this.txtradiovol.TextChanged += new System.EventHandler(this.txtradiovol_TextChanged);
             // 
             // label23
             // 
@@ -602,6 +605,7 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 5;
             this.comboBox2.Text = "Seleccione";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -685,7 +689,7 @@
         private System.Windows.Forms.TextBox txtlado3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnvolum;
         private System.Windows.Forms.Label lblvolum;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtladovol;

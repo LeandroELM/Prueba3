@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,32 +41,56 @@ namespace Prueba3
 
             FiguraBidimensional obj = new FiguraBidimensional();
             int indice = cboBidi.SelectedIndex;
-
-            switch (indice)
+            if (indice == 0 || indice == 1 || indice == 2)
             {
-                case 0:
+                switch (indice)
+                {
+                    case 0:
+                        if (txtradio.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                        }
+                        else
+                        {
+                            obj.CalcularAreaCirculo(Convert.ToDouble(txtradio.Text));
+                            lblarea.Text = obj.ObtenerArea().ToString("N2");
+                            Reset();
+                        }
+                        break;
 
-                    obj.CalcularAreaCirculo(Convert.ToDouble(txtradio.Text));
-                    lblarea.Text = obj.ObtenerArea().ToString("N2");
-                    Reset();
+                    case 1:
+                        if (txtbase.Text == "" || txtaltura.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continunar");
+                            Reset();
+                        }
+                        else
+                        {
+                            obj.CalcularAreaCuadrado(Convert.ToDouble(txtbase.Text), Convert.ToDouble(txtaltura.Text));
+                            lblarea.Text = obj.ObtenerArea().ToString("N2");
+                            Reset();
+                        }
+                        break;
 
-                    break;
-
-                case 1:
-
-                    obj.CalcularAreaCuadrado(Convert.ToDouble(txtbase.Text), Convert.ToDouble(txtaltura.Text));
-                    lblarea.Text = obj.ObtenerArea().ToString("N2");
-                    Reset();
-
-                    break;
-
-                case 2:
-
-                    obj.CalcularAreaTriangulo(Convert.ToDouble(txtbase.Text), Convert.ToDouble(txtaltura.Text));
-                    lblarea.Text = obj.ObtenerArea().ToString("N2");
-                    Reset();
-
-                    break;
+                    case 2:
+                        if (txtbase.Text == "" || txtaltura.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continunar");
+                            Reset();
+                        }
+                        else
+                        {
+                            obj.CalcularAreaTriangulo(Convert.ToDouble(txtbase.Text), Convert.ToDouble(txtaltura.Text));
+                            lblarea.Text = obj.ObtenerArea().ToString("N2");
+                            Reset();
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una figura primero");
+                Reset();
             }
         }
 
@@ -116,28 +142,57 @@ namespace Prueba3
 
             FIguraTridimensional obj = new FIguraTridimensional();
             int indice = cbotridi.SelectedIndex;
-
-            switch (indice)
+            if (indice == 0 || indice == 1 || indice == 2)
             {
-                case 0:
-
-                    obj.CalcularAreaEsfera(Convert.ToDouble(txtradioTri.Text));
-                    lblareatri.Text = obj.ObtenerArea().ToString("N2");
-                    Reset2();
-
+                switch (indice)
+                {
+                    case 0:
+                        if (txtradioTri.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                            Reset2();
+                        }
+                        else
+                        {
+                            obj.CalcularAreaEsfera(Convert.ToDouble(txtradioTri.Text));
+                            lblareatri.Text = obj.ObtenerArea().ToString("N2");
+                            Reset2();
+                        }
                     break;
 
-                case 1:
-                    obj.CalcularAreaCubo(Convert.ToDouble(txtlado.Text));
-                    lblareatri.Text = obj.ObtenerArea().ToString("N2");
-                    Reset2();
+                    case 1:
+                        if (txtlado.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                            Reset2();
+                        }
+                        else
+                        {
+                            obj.CalcularAreaCubo(Convert.ToDouble(txtlado.Text));
+                            lblareatri.Text = obj.ObtenerArea().ToString("N2");
+                            Reset2();
+                        }
                     break;
 
-                case 2:
-                    obj.CalcularAreaTetraedro(Convert.ToDouble(txtlado.Text));
-                    lblareatri.Text = obj.ObtenerArea().ToString("N2");
-                    Reset2();
+                    case 2:
+                        if (txtlado.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                            Reset2();
+                        }
+                        else
+                        {
+                            obj.CalcularAreaTetraedro(Convert.ToDouble(txtlado.Text));
+                            lblareatri.Text = obj.ObtenerArea().ToString("N2");
+                            Reset2();
+                        }
                     break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una figura primero");
+                Reset2();
             }
         }
 
@@ -287,33 +342,65 @@ namespace Prueba3
         {
             FiguraBidimensional obj = new FiguraBidimensional();
             int indice = comboBox1.SelectedIndex;
-
-            switch (indice)
+            if (indice == 0 || indice == 1 || indice == 2)
             {
-                case 0:
-                    obj.CalcularPerimetroCirculo(Convert.ToDouble(txtradioperi.Text));
-                    lblperimetro.Text = obj.ObtenerPerimetro().ToString("N2");
-                    Reset3();
+                switch (indice)
+                {
+                    case 0:
+                        if (txtradioperi.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continunar");
+                            Reset3();
+                        }
+                        else
+                        {
+                            obj.CalcularPerimetroCirculo(Convert.ToDouble(txtradioperi.Text));
+                            lblperimetro.Text = obj.ObtenerPerimetro().ToString("N2");
+                            Reset3();
+                        }
                     break;
 
-                case 1:
-                    obj.CalcularPerimetroCuadrado(Convert.ToDouble(txtlado1.Text));
-                    lblperimetro.Text = obj.ObtenerPerimetro().ToString("N2");
-                    Reset3();
+                    case 1:
+                        if (txtlado1.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continunar");
+                            Reset3();
+                        }
+                        else
+                        {
+                            obj.CalcularPerimetroCuadrado(Convert.ToDouble(txtlado1.Text));
+                            lblperimetro.Text = obj.ObtenerPerimetro().ToString("N2");
+                            Reset3();
+                        }
                     break;
 
-                case 2:
-                    if (Convert.ToDouble(txtlado1.Text) + Convert.ToDouble(txtlado2.Text) <= Convert.ToDouble(txtlado3.Text) || Convert.ToDouble(txtlado1.Text) + Convert.ToDouble(txtlado2.Text) <= Convert.ToDouble(txtlado2.Text) || Convert.ToDouble(txtlado2.Text) + Convert.ToDouble(txtlado3.Text) <= Convert.ToDouble(txtlado1.Text))
-                    {
-                        MessageBox.Show("No es un triángulo válido. La suma de dos lados debe ser mayor que el tercer lado.");
-                    }
-                    else
-                    {
-                        obj.CalcularPerimetroTriangulo(Convert.ToDouble(txtlado1.Text), Convert.ToDouble(txtlado2.Text), Convert.ToDouble(txtlado3.Text));
-                        lblperimetro.Text = obj.ObtenerPerimetro().ToString("N2");
-                        Reset3();
-                    }
+                    case 2:
+                        if (txtlado1.Text == "" || txtlado2.Text == "" || txtlado3.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                            Reset3();
+                        }
+                        else
+                        {
+                            if (Convert.ToDouble(txtlado1.Text) + Convert.ToDouble(txtlado2.Text) <= Convert.ToDouble(txtlado3.Text) || Convert.ToDouble(txtlado1.Text) + Convert.ToDouble(txtlado2.Text) <= Convert.ToDouble(txtlado2.Text) || Convert.ToDouble(txtlado2.Text) + Convert.ToDouble(txtlado3.Text) <= Convert.ToDouble(txtlado1.Text))
+                            {
+                                MessageBox.Show("No es un triángulo válido. La suma de dos primeros lados debe ser mayor que el tercer lado.");
+                                Reset3();
+                            }
+                            else
+                            {
+                                obj.CalcularPerimetroTriangulo(Convert.ToDouble(txtlado1.Text), Convert.ToDouble(txtlado2.Text), Convert.ToDouble(txtlado3.Text));
+                                lblperimetro.Text = obj.ObtenerPerimetro().ToString("N2");
+                                Reset3();
+                            }
+                        }
                     break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una figura primero");
+                Reset3();
             }
         }
 
@@ -373,5 +460,115 @@ namespace Prueba3
             }
         }
 
+        private void btnvolum_Click(object sender, EventArgs e)
+        {
+            FIguraTridimensional obj = new FIguraTridimensional();
+            int indice = comboBox2.SelectedIndex;
+            if (indice == 0 || indice == 1 || indice == 2)
+            {
+                switch (indice)
+                {
+                    case 0:
+                        if (txtradiovol.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                            Reset4();
+                        }
+                        else
+                        {
+                            obj.CalcularVolumenEsfera(Convert.ToDouble(txtradiovol.Text));
+                            lblvolum.Text = obj.ObtenerVolumen().ToString("N2");
+                            Reset4();
+                        }
+                        break;
+                    case 1:
+                        if (txtladovol.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                            Reset4();
+                        }
+                        else
+                        {
+                            obj.CalcularVolumenCubo(Convert.ToDouble(txtladovol.Text));
+                            lblvolum.Text = obj.ObtenerVolumen().ToString("N2");
+                            Reset4();
+                        }
+                        break;
+                    case 2:
+                        if (txtladovol.Text == "")
+                        {
+                            MessageBox.Show("Hay campos vacios, revise antes de continuar");
+                            Reset4();
+                        }
+                        else
+                        {
+                            obj.CalcularVolumenTetraedro(Convert.ToDouble(txtladovol.Text));
+                            lblvolum.Text = obj.ObtenerVolumen().ToString("N2");
+                            Reset4();
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una figura primero");
+                Reset4();
+            }
+        }
+
+        private void Reset4()
+        {
+            txtladovol.Text = string.Empty;
+            txtradiovol.Text = string.Empty;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = comboBox2.SelectedIndex;
+
+            if (indice == 0)
+            {
+                txtradiovol.Enabled = true;
+                txtladovol.Enabled = false;
+            }
+            else if (indice == 1)
+            {
+                txtradiovol.Enabled = false;
+                txtladovol.Enabled = true;
+            }
+            else
+            {
+                txtradiovol.Enabled = false;
+                txtladovol.Enabled = true;
+            }
+        }
+
+        private void txtradiovol_TextChanged(object sender, EventArgs e)
+        {
+            if (txtradiovol.Text == "0")
+            {
+                MessageBox.Show("El radio no pueden ser cero");
+                txtradiovol.Text = txtradiovol.Text.Remove(txtradiovol.Text.Length - 1);
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtradiovol.Text, "^[0-9]*$"))
+            {
+                MessageBox.Show("Por favor solo ingrese numeros.");
+                txtradiovol.Text = txtradiovol.Text.Remove(txtradiovol.Text.Length - 1);
+            }
+        }
+
+        private void txtladovol_TextChanged(object sender, EventArgs e)
+        {
+            if (txtladovol.Text == "0")
+            {
+                MessageBox.Show("El lado no pueden ser cero");
+                txtladovol.Text = txtladovol.Text.Remove(txtladovol.Text.Length - 1);
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtladovol.Text, "^[0-9]*$"))
+            {
+                MessageBox.Show("Por favor solo ingrese numeros.");
+                txtladovol.Text = txtladovol.Text.Remove(txtladovol.Text.Length - 1);
+            }
+        }
     }
 }
