@@ -54,6 +54,8 @@
             this.cbotridi = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtlado3 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.lblperimetro = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,9 +68,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnperi = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtlado3 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.btnvolum = new System.Windows.Forms.Button();
             this.lblvolum = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -78,7 +79,9 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -373,6 +376,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Figuras Bidimensionales (perímetro)";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(165, 107);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Lado 3:";
+            // 
+            // txtlado3
+            // 
+            this.txtlado3.Location = new System.Drawing.Point(206, 100);
+            this.txtlado3.Name = "txtlado3";
+            this.txtlado3.Size = new System.Drawing.Size(27, 20);
+            this.txtlado3.TabIndex = 16;
+            this.txtlado3.TextChanged += new System.EventHandler(this.txtlado3_TextChanged);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -484,23 +504,6 @@
             this.btnperi.UseVisualStyleBackColor = true;
             this.btnperi.Click += new System.EventHandler(this.btnperi_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(165, 107);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 13);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Lado 3:";
-            // 
-            // txtlado3
-            // 
-            this.txtlado3.Location = new System.Drawing.Point(206, 100);
-            this.txtlado3.Name = "txtlado3";
-            this.txtlado3.Size = new System.Drawing.Size(27, 20);
-            this.txtlado3.TabIndex = 16;
-            this.txtlado3.TextChanged += new System.EventHandler(this.txtlado3_TextChanged);
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.DarkTurquoise;
@@ -521,6 +524,15 @@
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Figuras Tridimensionales(volumen)";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(361, 121);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "metros.";
             // 
             // btnvolum
             // 
@@ -607,14 +619,32 @@
             this.comboBox2.Text = "Seleccione";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // label20
+            // label25
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(361, 121);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 18;
-            this.label20.Text = "metros.";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(661, 456);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(63, 13);
+            this.label25.TabIndex = 18;
+            this.label25.Text = "Integrantes:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(730, 456);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(155, 13);
+            this.label26.TabIndex = 19;
+            this.label26.Text = "Leandro Enrique Lacayo Matus";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(730, 473);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(101, 13);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "Josue Gabriel Rojas";
             // 
             // Form1
             // 
@@ -622,6 +652,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(907, 495);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label11);
@@ -698,6 +731,9 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
     }
 }
 
